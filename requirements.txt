@@ -1,0 +1,10 @@
+# Python dependencies for Instagram Scraper
+# Install with: pip install -r requirements.txt
+
+# HTTP library for making requests to Instagram API
+requests>=2.31.0
+
+# Note: All other imports (json, time, sys, os, shutil, tempfile, csv, re, 
+# subprocess, concurrent.futures, random) are part of Python's standard library
+# and don't need to be installed separately.
+
