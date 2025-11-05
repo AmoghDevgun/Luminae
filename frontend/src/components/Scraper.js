@@ -25,6 +25,7 @@ import {
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import axios from 'axios';
+import getApiUrl from '../config/api';
 
 function Scraper() {
   const [username, setUsername] = useState('');
@@ -83,7 +84,7 @@ function Scraper() {
       const token = localStorage.getItem('token');
       
       // Use fetch with POST for streaming
-      const response = await fetch('/api/scrape/start', {
+      const response = await fetch(getApiUrl('api/scrape/start'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

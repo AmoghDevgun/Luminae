@@ -20,6 +20,7 @@ import {
 import DeleteIcon from '@mui/icons-material/Delete';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import axios from 'axios';
+import getApiUrl from '../config/api';
 
 function Results() {
   const navigate = useNavigate();
@@ -34,7 +35,7 @@ function Results() {
   const fetchResults = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('/api/results');
+      const response = await axios.get(getApiUrl('api/results'));
       setResults(response.data.data);
     } catch (error) {
       setError('Failed to fetch results');
@@ -50,7 +51,7 @@ function Results() {
     }
 
     try {
-      await axios.delete(`/api/results/${id}`);
+      await axios.delete(getApiUrl(`api/results/${id}`));
       setResults(results.filter(r => r._id !== id));
     } catch (error) {
       setError('Failed to delete result');

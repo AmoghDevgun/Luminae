@@ -26,6 +26,7 @@ import {
 } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import axios from 'axios';
+import getApiUrl from '../config/api';
 
 function TabPanel({ children, value, index, ...other }) {
   return (
@@ -57,7 +58,7 @@ function ResultDetail() {
   const fetchResult = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`/api/results/${id}`);
+      const response = await axios.get(getApiUrl(`api/results/${id}`));
       setResult(response.data.data);
       
       // Fetch file contents
@@ -80,7 +81,7 @@ function ResultDetail() {
       
       try {
         // Read file from backend
-        const response = await axios.get(`/api/results/${id}/file/${key}`, {
+        const response = await axios.get(getApiUrl(`api/results/${id}/file/${key}`), {
           responseType: 'text'
         });
         
