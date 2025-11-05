@@ -361,8 +361,8 @@ def main():
         pass
 
     leads_file = os.path.join(output_dir, f"{username}_leads.txt")
-    # Limit to 500 accounts for MVP
-    MAX_LEADS = 500
+    # Limit to 50 accounts for MVP
+    MAX_LEADS = 50
     sorted_leads = sorted(leads)
     limited_leads = sorted_leads[:MAX_LEADS]
     

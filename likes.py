@@ -8,7 +8,7 @@ HEADERS["X-IG-App-ID"] = "936619743392459"
 HEADERS["User-Agent"] = "Mozilla/5.0"
 
 # --- Function to fetch likers ---
-def get_likers(media_id, file_handle, global_count, max_total=500):
+def get_likers(media_id, file_handle, global_count, max_total=50):
     next_max_id = ""
     page = 1
     total = 0
@@ -81,7 +81,7 @@ def scrape_likes(filename, output_file="likers.txt"):
 
     # --- Main Execution ---
     print(f"[*] Processing {len(media_entries)} media IDs...\n")
-    MAX_LIKERS = 500  # Limit for MVP
+    MAX_LIKERS = 50  # Limit for MVP
     global_count = [0]  # Use list to allow modification in nested function
 
     with open(output_file, "w") as f:

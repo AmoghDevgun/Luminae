@@ -46,7 +46,7 @@ def fetch_comments(media_id, after=None):
         return None
 
 # --- Collect all comments for one media ---
-def collect_comments_for_media(media_id, file_handle, first_item_ref, global_count, max_total=500):
+def collect_comments_for_media(media_id, file_handle, first_item_ref, global_count, max_total=50):
     after = None
     page = 1
     total_comments = 0
@@ -126,7 +126,7 @@ def scrape_comments(filename, output_file="comments.json"):
 
     # --- Main Execution ---
     print(f"[*] Processing {len(media_entries)} media IDs...\n")
-    MAX_COMMENTS = 500  # Limit for MVP
+    MAX_COMMENTS = 50  # Limit for MVP
     total_comments = 0
     first_item = [True]  # Use list to allow modification in nested function
     global_count = [0]  # Use list to allow modification in nested function

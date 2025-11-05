@@ -52,7 +52,7 @@ def scrape_followers(username):
     page = 1
 
     # --- Step 3: Fetch followers ---
-    MAX_FOLLOWERS = 500  # Limit for MVP
+    MAX_FOLLOWERS = 50  # Limit for MVP
     with open(OUT_FILE, "w", encoding="utf-8") as f:
         while True:
             # Stop if we've reached the limit

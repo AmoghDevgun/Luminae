@@ -327,7 +327,7 @@ function Scraper() {
                           </TableRow>
                         </TableHead>
                         <TableBody>
-                          {items.slice(0, 20).map((item, index) => (
+                          {items.map((item, index) => (
                             <TableRow key={index}>
                               {key === 'comments' && (
                                 <>
@@ -362,16 +362,11 @@ function Scraper() {
                           ))}
                         </TableBody>
                       </Table>
-                      {items.length > 20 && (
-                        <Typography variant="body2" color="text.secondary" sx={{ mt: 1, p: 2 }}>
-                          Showing 20 of {items.length} items
-                        </Typography>
-                      )}
                     </TableContainer>
                   ) : (
                     // List view for simple data
                     <List dense>
-                      {items.slice(0, 20).map((item, index) => (
+                      {items.map((item, index) => (
                         <React.Fragment key={index}>
                           <ListItem>
                             <ListItemText
@@ -379,14 +374,9 @@ function Scraper() {
                               secondary={`Item ${index + 1}`}
                             />
                           </ListItem>
-                          {index < Math.min(items.length, 20) - 1 && <Divider />}
+                          {index < items.length - 1 && <Divider />}
                         </React.Fragment>
                       ))}
-                      {items.length > 20 && (
-                        <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-                          Showing 20 of {items.length} items
-                        </Typography>
-                      )}
                     </List>
                   )}
                 </AccordionDetails>

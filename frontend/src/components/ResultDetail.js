@@ -122,7 +122,7 @@ function ResultDetail() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {items.slice(0, 100).map((item, index) => (
+            {items.map((item, index) => (
               <TableRow key={index}>
                 {columns.map((col) => (
                   <TableCell key={col.key}>
@@ -133,11 +133,6 @@ function ResultDetail() {
             ))}
           </TableBody>
         </Table>
-        {items.length > 100 && (
-          <Typography variant="body2" color="text.secondary" sx={{ p: 2 }}>
-            Showing 100 of {items.length} items
-          </Typography>
-        )}
       </TableContainer>
     );
   };
@@ -296,7 +291,7 @@ function ResultDetail() {
         <TabPanel value={activeTab} index={3}>
           {fileData.postid && fileData.postid.length > 0 ? (
             <List dense>
-              {fileData.postid.slice(0, 100).map((item, index) => (
+              {fileData.postid.map((item, index) => (
                 <ListItem key={index}>
                   <ListItemText primary={String(item)} />
                 </ListItem>
@@ -310,7 +305,7 @@ function ResultDetail() {
         <TabPanel value={activeTab} index={4}>
           {fileData.followers && fileData.followers.length > 0 ? (
             <List dense>
-              {fileData.followers.slice(0, 100).map((item, index) => (
+              {fileData.followers.map((item, index) => (
                 <ListItem key={index}>
                   <ListItemText primary={String(item)} />
                 </ListItem>
@@ -324,7 +319,7 @@ function ResultDetail() {
         <TabPanel value={activeTab} index={5}>
           {fileData.likes && fileData.likes.length > 0 ? (
             <List dense>
-              {fileData.likes.slice(0, 100).map((item, index) => (
+              {fileData.likes.map((item, index) => (
                 <ListItem key={index}>
                   <ListItemText primary={String(item)} />
                 </ListItem>
